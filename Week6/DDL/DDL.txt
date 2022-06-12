@@ -1,0 +1,43 @@
+
+CREATE DATABASE ecommerce;
+
+CREATE TABLE IF NOT EXISTS `ecommerce`.`Customer` (
+  `Id` VARCHAR(36) NOT NULL,
+  `Name` VARCHAR(100) NOT NULL,
+  `Address` VARCHAR(300) NULL,
+  `CreatedBy` VARCHAR(100) NOT NULL,
+  `CreatedDate` TIMESTAMP NOT NULL,
+  `UpdatedBy` VARCHAR(100) NULL,
+  `UpdatedDate` TIMESTAMP NULL,
+  PRIMARY KEY (`Id`))
+ENGINE = InnoDB ;
+
+CREATE TABLE IF NOT EXISTS `ecommerce`.`Product` (
+  `Id` VARCHAR(36) NOT NULL,
+  `SKU` VARCHAR(12) NOT NULL,
+  `Name` VARCHAR(100) NOT NULL,
+  `UnitPrice` DECIMAL(10,2) NOT NULL,
+  `Quantity` INT NOT NULL,
+  `CreatedBy` VARCHAR(100) NOT NULL,
+  `CreatedDate` TIMESTAMP NOT NULL,
+  `UpdatedBy` VARCHAR(100) NULL,
+  `UpdatedDate` TIMESTAMP NULL,
+  PRIMARY KEY (`Id`))
+ENGINE = InnoDB ;
+
+CREATE TABLE IF NOT EXISTS `ecommerce`.`Order` (
+  `Id` VARCHAR(36) NOT NULL,
+  `CustomerId` VARCHAR(36) NOT NULL,
+  `CustomerName` VARCHAR(100) NULL,
+  `CustomerAddress` VARCHAR(300) NULL,
+  `ProductId` VARCHAR(36) NOT NULL,
+  `ProductName` VARCHAR(100) NULL,
+  `UnitPrice` DECIMAL(10,2) NOT NULL,
+  `Quantity` INT NOT NULL,
+  `SubTotal` DECIMAL(14,2) NOT NULL,
+  `CreatedBy` VARCHAR(100) NOT NULL,
+  `CreatedDate` TIMESTAMP NOT NULL,
+  `UpdatedBy` VARCHAR(100) NULL,
+  `UpdatedDate` TIMESTAMP NULL,
+  PRIMARY KEY (`Id`))
+ENGINE = InnoDB ;
