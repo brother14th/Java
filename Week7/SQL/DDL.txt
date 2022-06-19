@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS `ecommerce`.`Order` (
+  `Id` bigint NOT NULL auto_increment,
+  `CustomerId` bigint NOT NULL,
+  `ProductId` bigint NOT NULL,
+  `UnitPrice` DECIMAL(10,2) NOT NULL,
+  `Quantity` INT NOT NULL,
+  `SubTotal` DECIMAL(14,2) NOT NULL,
+  `Status` bit NOT NULL,
+  `CreatedDate` TIMESTAMP NOT NULL,
+  `UpdatedDate` TIMESTAMP NULL,
+  PRIMARY KEY (`Id`))
+ENGINE = InnoDB ;
